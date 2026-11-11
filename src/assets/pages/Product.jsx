@@ -9,7 +9,12 @@ import {
   faMinus,
 } from "@fortawesome/free-solid-svg-icons";
 
+import { CartContext } from "../context/CartContext";
+import { useContext } from "react";
+
 export default function Product() {
+  const { addToCart } = useContext(CartContext);
+
   const { id } = useParams();
 
   const [product, setProduct] = useState(null);
@@ -73,7 +78,7 @@ export default function Product() {
   }
 
   return (
-    <div className="bg-gray-50 min-h-screen py-10 px-4 md:px-10">
+    <div className="bg-gray-50 min-h-screen py-10 px-4 md:px-10  ">
       {/* Back Button */}
       <NavLink
         to="/"
@@ -160,7 +165,9 @@ export default function Product() {
 
             {/* Add to Cart */}
             <button
-              onClick={() => setAdded(true)}
+              onClick={() => {
+                (addToCart(product, quantity), setAdded(true));
+              }}
               className="mt-8 w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl font-semibold transition flex items-center justify-center gap-3"
             >
               <FontAwesomeIcon icon={faCartShopping} />

@@ -41,7 +41,7 @@ export default function Filters({
 
   return (
     <>
-      <aside className="sticky top-4 w-64 min-w-64 shrink-0 h-screen bg-white p-4 mb-4 ">
+      <aside className="sticky top-4 w-64 min-w-64 shrink-0 h-screen bg-white p-4 mb-4  ">
         <h2 className="text-lg font-semibold pb-4">Filters</h2>
         <button
           className={`block w-full px-4 py-2 text-white rounded my-2 ${

@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import Filters from "./Filters";
 import ProductGrid from "./ProductGrid";
+import { useContext } from "react";
+import { ProductsContext } from "../context/ProductsContext";
+
 export default function Main() {
-  const [products, setProducts] = useState([]);
+  const { products, setProducts } = useContext(ProductsContext);
   const [filteredProduct, setFilteredproduct] = useState([]);
   const [loading, setLoading] = useState(true);
   const showFliteredProducts = () => {
